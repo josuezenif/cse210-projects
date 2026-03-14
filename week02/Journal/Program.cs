@@ -1,9 +1,12 @@
 using System;
+using Microsoft.VisualBasic;
 
 class Program
 {
     static void Main(string[] args)
     {
+        Journal journal = new Journal();
+
         Console.WriteLine("Hello World! This is the Journal Project.");
         Console.WriteLine();
 
@@ -12,47 +15,81 @@ class Program
         Console.WriteLine();
 
         int userInput = 0;
-        int quit = 5;
+        int quit = 6;
+
         while (userInput != quit)
         {
             Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
+            Console.WriteLine("2. Prompt a question");
+            Console.WriteLine("3. Display");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Load");
+            Console.WriteLine("6. Quit");
+            Console.WriteLine();
             Console.Write("What would you like to do? ");
             string user_Input = Console.ReadLine();
             userInput = int.Parse(user_Input);
+            Console.WriteLine();
 
-            if (userInput == 1)
+
+            if (userInput == 1)   // asks user what they want to write and adds their text to the entry 
             {
-                Console.Write("What you did today? ");
+                Console.Write("What did you do today? ");
                 string text = Console.ReadLine();
-            }
-            else if (userInput == 2)
-            {
-                Console.WriteLine("This is the SECOND option");
+                string firstQuestion = "What did you do today?";
+
+                Entry entry = new Entry();
+                DateTime _currentDate = DateTime.Now;
+                entry._date = _currentDate.ToShortDateString();
+                entry._promptText = firstQuestion;
+                entry._entryText = text;
+
+                journal.AddEntry(entry);
             }
 
-            else if (userInput == 3)
+            else if (userInput == 2)    // prompts a random question
             {
-                Console.WriteLine("This is the THIRD option");
+                PromptGenerator promptQuestion = new PromptGenerator();
+                string randomQuestion = promptQuestion.promptQuestion();
+                Console.Write(randomQuestion);
+                string answer = Console.ReadLine();
+
+                Entry entry = new Entry();
+                DateTime _currentDate = DateTime.Now;
+                entry._date = _currentDate.ToShortDateString();
+                entry._promptText = randomQuestion;
+                entry._entryText = answer;
+
+                journal.AddEntry(entry);
             }
 
-            else if (userInput == 4)
+            else if (userInput == 3)   // this is the DISPLAY option
             {
-                Console.WriteLine("This is the FOURTH option");
+                journal.DisplayAll();
             }
 
-            if (userInput == 5)
+            else if (userInput == 4)   // save option
+            {
+                Console.WriteLine("Type in a filename to save entries: ");
+                string filename = Console.ReadLine();
+                Console.WriteLine();
+                journal.SaveToFile(filename);
+            }
+
+            else if (userInput == 5)    // load option
+            {
+                Console.WriteLine("Enter the filename to load entries: ");
+                string filename = Console.ReadLine();
+                journal.LoadFromFile(filename);
+            }
+
+            else if (userInput == 6)  // quit option
             {
                 Console.WriteLine("Thanks you for using your Journal app!");
                 Console.WriteLine("Come again tommorow!");
+                Console.WriteLine();
                 break;
             }
         }
-
     }
-
-
 }
