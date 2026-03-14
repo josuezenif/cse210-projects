@@ -1,3 +1,7 @@
+// I added an extra option for the user, this was to ask the user to Write whatever they wanted in a text box
+// Then I added their response to the an entry using the entry class (lines 41-51)
+// I made the prompt random question a choice for the user
+
 using System;
 using Microsoft.VisualBasic;
 
