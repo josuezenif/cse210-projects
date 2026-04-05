@@ -1,8 +1,8 @@
 public class Listing : Activity
 {
     private int _count;
-    List<string> _userItems = new List<string>();
-    List<string> _promptsList = ["> Who are people that you appreciate?",
+    private List<string> _userItems = new List<string>();
+    private List<string> _promptsList = ["> Who are people that you appreciate?",
         "> What are personal strengths of yours?",
         "> Who are people that you have helped this week?",
        "> When have you felt the Holy Ghost this month?",

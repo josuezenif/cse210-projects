@@ -1,6 +1,6 @@
 public class Reflection : Activity
 {
-    List<string> _promptsList = ["----Think of a time when you stood up for someone else.----",
+    private List<string> _promptsList = ["----Think of a time when you stood up for someone else.----",
         "----Think of a time when you helped someone in need.----",
         "----Think of a time when you did something really difficult.----",
        "----Think of a time when you did something truly selfless.----",
@@ -8,9 +8,9 @@ public class Reflection : Activity
         "----Think of a time you felt the Holy Ghost in your life.----",
        "----Think of a an experience where you changed for the better.----",
         "----Think of a time where you engaged service to others.----"
-        ];
+         ];
 
-    List<string> _questionsList = ["> Why was this experience meaningful to you?",
+    private List<string> _questionsList = ["> Why was this experience meaningful to you?",
     "> Have you ever done anything like this before?",
     "> How did you get started?",
     "> How did you feel when it was complete?",

@@ -3,7 +3,7 @@ public class Activity
     private string _name;
     private string _description;
     protected int _duration;
-    List<string> animationsStrings = new List<string>();
+    private List<string> animationsStrings = new List<string>();
 
     public void AddAnimationStrings()
     {
