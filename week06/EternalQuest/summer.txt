@@ -1,0 +1,4 @@
+585
+Checklist Goal|Summer|Assist to your conference and YSA conference |220|2|2|100
+Simple Goal|Give a talk|Give a talk in the young men quorum Sunday class|50|True
+Eternal Goal|GYM NOW|Go to the gym at least 3 times a week|65

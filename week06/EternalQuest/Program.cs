@@ -118,7 +118,6 @@ class Program
             {
                 Console.Clear();
                 goalManager.RecordEvent();
-                Console.Clear();
             }
 
             else if (option == 6)
