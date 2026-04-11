@@ -1,0 +1,5 @@
+1510
+Simple Goal|eat meat|eat protein meals|210|True
+Eternal Goal|breath|breath everyday|300
+Checklist Goal|cook meals|cook breakfast and meals every day|600|5|5|500
+Simple Goal|Do excercice|Go to the gym at least 3 times a week|70|False
